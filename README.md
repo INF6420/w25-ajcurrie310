@@ -33,3 +33,4 @@
 **Main Content** - will contain an image of the bookshops storefront, the company history for the bookshop, and a form for patrons to email the bookshop about inventory inquiries.
 
 **Footer** - will contain the logo for the bookshop, links to the other pages, and social media links.
+
