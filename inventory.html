@@ -4,59 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexis Currie - Bookstore Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <nav>
-           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about_us.html">About Us</a></li>
+        <nav class="main-menu">
+           <ul class="main-nav">
+           <li><a href="index.html">Home</a></li>
+           <li><a href="about_us.html">About Us</a></li>
            </ul> 
+           <div class="logo">
+            <img src="images/bookstore_logo.PNG" alt ="Bookworm Boutique Logo">
+        </div>  
+        <div class="search-container">
+            <input class="search-box" type="search" placeholder="Search">
+           <button type="submit">Submit</button>
+        </div>        
         </nav>
-        <div><p>Search Button Placeholder</p></div>
     </header>
     <main>
-        <div><h1>Our Collections</h1></div>
-        <div><img src="images/book_1.jpg" alt="Lord of the Flies"></div>
-        <div>
-            <h1>Lord of the Flies</h1>
-            <p>Signed 1st Edition Copy. Acquired on 1/31/2025</p>
+        <h1>Our Collection</h1>
+        <div class="row">
+            <div class="column"><img height="500" width= "500" src="images/book_1.jpg" alt="Lord of the Flies"></div>
+            <div class="column"><img height="500" width= "500" src="images/book_2.jpg" alt="Moby Dick"></div>
+            <div class="column"><img height="500" width= "500" src="images/book_3.jpg" alt="The Happy Prince"></div>
         </div>
-        <div><img src="images/book_2.jpg" alt="Moby Dick"></div>
-        <div>
-            <h1>Moby Dick</h1>
-            <p>Illustrated 1st Edition Copy. Acquired on 1/25/2025</p>
-        </div>
-        <div><img src="images/book_3.jpg" alt="The Happy Prince"></div>
-        <div>
-            <h1>The Happy Prince</h1>
-            <p>1st Edition Copy. Acquired on 2/1/2025</p>
-        </div>
-        <div><img src="images/book_4.jpg" alt="Harmonium"></div>
-        <div>
-            <h1>Harmonium</h1>
-            <p>1st Edition Copy. Acquired on 12/31/2024</p>
-        </div>
-        <div><img src="images/book_5.jpg" alt="Harry Potter and the Sorcerer's Stone"></div>
-        <div>
-            <h1>Harry Potter and the Sorcerer's Stone</h1>
-            <p>1st Edition Copy. Acquired on 1/2/2025</p>
-        </div>
-        <div><img src="images/book_6.jpg" alt="The Hobbit"></div>
-        <div>
-            <h1>The Hobbit</h1>
-            <p>Signed 1st Edition Copy. Acquired on 2/6/2025</p>
+        <div class="row">
+            <div class="column"><img height="500" width= "500" src="images/book_4.jpg" alt="Harmonium"></div>
+            <div class="column"><img height="500" width= "500" src="images/book_5.jpg" alt="Harry Potter and the Sorcerer's Stone"></div>
+            <div class="column"><img height="500" width= "500" src="images/book_6.jpg" alt="The Hobbit"></div>
         </div>
     </main>
     <footer>
-        <div><img src="images/bookstore_logo.jpeg" alt ="Bookworm Boutique Logo"></div>
-        <nav>
-            <ul>
+        <nav class="footer-menu">
+            <ul class="footer-nav">
              <li><a href="index.html">Home</a></li>
              <li><a href="about_us.html">About Us</a></li>
             </ul> 
         </nav>
-        <div><p>Social Media Placeholder</p></div>
+        <div class="social-media">
+            <ul>
+                <li><a href=""><img height="20" width="20" src="images/instagram_logo.svg" alt="Instagram"></a></li>
+                <li><a href=""><img height="20" width="20" src="images/facebook_logo.svg" alt="Facebook"></a></li>
+                <li><a href=""><img height="20" width="20" src="images/twitter_logo.svg" alt="Twitter"></a></li>
+            </ul>
+        </div>
     </footer>
 </body>
 </html>

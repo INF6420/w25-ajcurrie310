@@ -4,46 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexis Currie - Bookstore Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <nav>
-           <ul>
-            <li><a href="inventory.html">Inventory</a></li>
-            <li><a href="about_us.html">About Us</a></li>
+        <nav class="main-menu">
+           <ul class="main-nav">
+           <li><a href="inventory.html">Inventory</a></li>
+           <li><a href="about_us.html">About Us</a></li>
            </ul> 
-           <img src="images/bookstore_logo.jpeg" alt ="Bookworm Boutique Logo">
+           <div class="logo">
+            <img src="images/bookstore_logo.PNG" alt ="Bookworm Boutique Logo">
+        </div>  
+        <div class="search-container">
+            <input class="search-box" type="search" placeholder="Search">
+           <button type="submit">Submit</button>
+        </div>        
         </nav>
-        <div><p>Search Button Placeholder</p></div>
     </header>
     <main>
-        <div><img src="images/book_1.jpg" alt="Lord of the Flies"></div>
-        <div>
-            <h1>Lord of the Flies</h1>
-            <p>Signed 1st Edition Copy. Acquired on 1/31/2025</p>
-            <a href="inventory.html">Read More</a>
+        <h1>Featured Books</h1>
+        <div class="row">
+            <div class="column"><img height="500" width= "500" src="images/book_1.jpg" alt="Lord of the Flies"></div>
+            <div class="column"><img height="500" width= "500" src="images/book_2.jpg" alt="Moby Dick"></div>
+            <div class="column"><img height="500" width= "500" src="images/book_3.jpg" alt="The Happy Prince"></div>
         </div>
-        <div><img src="images/book_2.jpg" alt="Moby Dick"></div>
-        <div>
-            <h1>Moby Dick</h1>
-            <p>Illustrated 1st Edition Copy. Acquired on 1/25/2025</p>
-            <a href="inventory.html">Read More</a>
+        <div class="row">
+            <div class="column"><h2>Lord of the Flies</h2></div>
+            <div class="column"><h2>Moby Dick</h2></div>
+            <div class="column"><h2>The Happy Prince</h2></div>
         </div>
-        <div><img src="images/book_3.jpg" alt="The Happy Prince"></div>
-        <div>
-            <h1>The Happy Prince</h1>
-            <p>1st Edition Copy. Acquired on 2/1/2025</p>
-            <a href="inventory.html">Read More</a>
-        </div>
+        <div class="row">
+            <div class="column"><p>Signed 1st Edition Copy. Acquired on 1/31/2025</p></div>
+            <div class="column"><p>Illustrated 1st Edition Copy. Acquired on 1/25/2025</p></div>
+            <div class="column"><p>1st Edition Copy. Acquired on 2/1/2025</p></div>
+        </div> 
+        <div class="row">
+            <div class="column"><a href="inventory.html" class="button-outline" aria-labelledby="section-title">See More</a></div>
+            <div class="column"><a href="inventory.html" class="button-outline" aria-labelledby="section-title">See More</a></div>
+            <div class="column"><a href="inventory.html" class="button-outline" aria-labelledby="section-title">See More</a></div>
+        </div>        
     </main>
     <footer>
-        <nav>
-            <ul>
+        <nav class="footer-menu">
+            <ul class="footer-nav">
              <li><a href="inventory.html">Inventory</a></li>
              <li><a href="about_us.html">About Us</a></li>
             </ul> 
         </nav>
-        <div><p>Social Media Placeholder</p></div>
+        <div class="social-media">
+            <ul>
+                <li><a href=""><img height="20" width="20" src="images/instagram_logo.svg" alt="Instagram"></a></li>
+                <li><a href=""><img height="20" width="20" src="images/facebook_logo.svg" alt="Facebook"></a></li>
+                <li><a href=""><img height="20" width="20" src="images/twitter_logo.svg" alt="Twitter"></a></li>
+            </ul>
+        </div>
     </footer>
 </body>
 </html>
