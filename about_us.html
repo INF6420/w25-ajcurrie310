@@ -4,36 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexis Currie - Bookstore Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <nav>
-           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="inventory.html">Inventory</a></li>
+        <nav class="main-menu">
+           <ul class="main-nav">
+           <li><a href="index.html">Home</a></li>
+           <li><a href="inventory.html">Inventory</a></li>
            </ul> 
+           <div class="logo">
+            <img src="images/bookstore_logo.PNG" alt ="Bookworm Boutique Logo">
+        </div>  
+        <div class="search-container">
+            <input class="search-box" type="search" placeholder="Search">
+           <button type="submit">Submit</button>
+        </div>        
         </nav>
-        <div><p>Search Button Placeholder</p></div>
     </header>
     <main>
-        <div><img src="images/storefront.jpg" alt="Storefront"></div>
+        <img class="storefront-img" src="images/storefront.jpg" alt="Storefront" style="width:50%;">
         <div>
-            <p>Company History/About Us</p>
+            <h1>Company History</h1>
+            <p class="company-history">Bookworm Boutique was founded in October 2024 by Alexis Currie, a passionate bibliophile with a vision to create a unique space where readers of all ages could immerse themselves in the world of literature. What started as a small, cozy bookstore with a carefully curated selection of books quickly grew into a beloved community hub for book lovers.
+
+                Alexis, who had always dreamed of sharing her love for reading with others, opened Bookworm Boutique with the goal of providing not only a wide range of books but also a welcoming atmosphere where customers could discover their next great read, engage in thoughtful conversations, and connect with fellow book enthusiasts.
+                
+                From the very beginning, Bookworm Boutique has prided itself on offering a personalized experience, with staff recommendations and themed events that cater to the diverse tastes of its customers. Whether you're looking for the latest bestsellers, hidden literary gems, or a cozy corner to relax and read, Bookworm Boutique has become a cherished destination for all who appreciate the magic of a good book.
+                
+                As the store continues to grow, Alexis remains committed to preserving the charm and intimacy of Bookworm Boutique while constantly striving to introduce new ways to engage with the literary community. With its roots firmly planted in the love of books, Bookworm Boutique is more than just a bookstore—it's a celebration of stories, imagination, and the joy of reading.</p>
         </div>
         <div>
             <h1>Contact Us</h1>
-            <p>Contact Form Placeholder</p>
+                <div class="container">
+                    <form action="#">
+                        <label for="Name">Name</label>
+                        <input type="text" id="Name" name="Name" placeholder="Your Name">
+                        <label for="Email">Email</label>
+                        <input type="text" id="Email" name="Email" placeholder="Your Email">
+                        <label for="subject">Subject</label>
+                        <textarea id="subject" name="subject" placeholder="Write Something..." style="height:200px"></textarea>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
         </div>
     </main>
     <footer>
-        <div><img src="images/bookstore_logo.jpeg" alt ="Bookworm Boutique Logo"></div>
-        <nav>
-            <ul>
+        <nav class="footer-menu">
+            <ul class="footer-nav">
              <li><a href="index.html">Home</a></li>
              <li><a href="inventory.html">Inventory</a></li>
             </ul> 
         </nav>
-        <div><p>Social Media Placeholder</p></div>
+        <div class="social-media">
+            <ul>
+                <li><a href=""><img height="20" width="20" src="images/instagram_logo.svg" alt="Instagram"></a></li>
+                <li><a href=""><img height="20" width="20" src="images/facebook_logo.svg" alt="Facebook"></a></li>
+                <li><a href=""><img height="20" width="20" src="images/twitter_logo.svg" alt="Twitter"></a></li>
+            </ul>
+        </div>
     </footer>
 </body>
 </html>
