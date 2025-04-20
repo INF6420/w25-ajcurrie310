@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The company history page and contact form for Bookworm Boutique, a secondhand bookstore.">
     <title>Alexis Currie - Bookstore Website</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/just-validate@4.2.0/dist/just-validate.production.min.js" defer></script>
 </head>
 <body>
     <header>
@@ -14,16 +16,16 @@
            <li><a href="inventory.html">Inventory</a></li>
            </ul> 
            <div class="logo">
-            <img src="images/bookstore_logo.PNG" alt ="Bookworm Boutique Logo">
+            <img src="images/bookstore_logo.avif" alt ="Bookworm Boutique Logo" width="400" height="400">
         </div>  
         <div class="search-container">
-            <input class="search-box" type="search" placeholder="Search">
-           <button type="submit">Submit</button>
+            <input id="searchInput" class="search-box" type="search" placeholder="Search for a page">
+            <ul id="resultsList"></ul>
         </div>        
         </nav>
     </header>
     <main>
-        <img class="storefront-img" src="images/storefront.jpg" alt="Storefront" style="width:50%;">
+        <img class="storefront-img" src="images/storefront.avif" alt="Storefront" style="width:50%;">
         <div>
             <h1>Company History</h1>
             <p class="company-history">Bookworm Boutique was founded in October 2024 by Alexis Currie, a passionate bibliophile with a vision to create a unique space where readers of all ages could immerse themselves in the world of literature. What started as a small, cozy bookstore with a carefully curated selection of books quickly grew into a beloved community hub for book lovers.
@@ -36,17 +38,18 @@
         </div>
         <div>
             <h1>Contact Us</h1>
-                <div class="container">
-                    <form action="#">
+                    <form id ="contactForm" action="https://formspree.io/f/xoverzdb" method="post">
                         <label for="Name">Name</label>
                         <input type="text" id="Name" name="Name" placeholder="Your Name">
+                        <div class="error-message" id="NameError"></div>
                         <label for="Email">Email</label>
                         <input type="text" id="Email" name="Email" placeholder="Your Email">
+                        <div class="error-message" id="EmailError"></div>
                         <label for="subject">Subject</label>
-                        <textarea id="subject" name="subject" placeholder="Write Something..." style="height:200px"></textarea>
+                        <textarea id="subject" name="subject" placeholder="Write Something..."></textarea>
+                        <div class="error-message" id="SubjectError"></div>
                         <input type="submit" value="Submit">
                     </form>
-                </div>
         </div>
     </main>
     <footer>
@@ -64,5 +67,97 @@
             </ul>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contactForm');
+
+
+            const validation = new JustValidate('#contactForm', {
+                errorFieldCssClass: 'is-invalid',
+                successFieldCssClass: 'is-valid',
+                errorLabelCssClass: 'error-message',
+                errorLabelCssClass: 'just-validate-error-label',
+            });
+
+            validation
+                .addField('#Name', [
+                    {
+                        rule: 'required',
+                        errorMessage: 'Name is required',
+                    },
+                    {
+                        rule: 'minLength',
+                        value: 2,
+                        errorMessage: 'Name must be at least 2 characters',
+                    }
+                ])
+                .addField('#Email', [
+                    {
+                        rule: 'required',
+                        errorMessage: 'Email is required',
+                    },
+                    {
+                        rule: 'email',
+                        errorMessage: 'Please enter a valid email address',
+                    },
+                ])
+                .addField('#subject', [
+                    {
+                        rule: 'required',
+                        errorMessage: 'Subject is required',
+                    },
+                    {
+                        rule: 'minLength',
+                        value: 10,
+                        errorMessage: 'Subject must be at least 10 characters',
+                    },
+                    {
+                        rule: 'maxLength',
+                        value: 500,
+                        errorMessage: 'Subject can’t be more than 500 characters',
+                    },
+                ])
+                .onSuccess(function (event) {
+                    event.preventDefault(); 
+
+                    setTimeout(function () {
+                        form.submit();
+                    }, 2000);
+                });
+        });
+    </script>
+    <script>
+        const pages = [
+          { title: 'Home', url: 'index.html' },
+          { title: 'Inventory', url: 'inventory.html' },
+          { title: 'About Us', url: 'about_us.html' },
+          // Add more pages as needed
+        ];
+      
+        const input = document.getElementById('searchInput');
+        const results = document.getElementById('resultsList');
+      
+        input.addEventListener('input', function () {
+          const query = this.value.toLowerCase();
+          results.innerHTML = '';
+      
+          if (query.length > 0) {
+            const matches = pages.filter(page => page.title.toLowerCase().includes(query));
+      
+            matches.forEach(page => {
+              const li = document.createElement('li');
+              const a = document.createElement('a');
+              a.href = page.url;
+              a.textContent = page.title;
+              li.appendChild(a);
+              results.appendChild(li);
+            });
+      
+            if (matches.length === 0) {
+              results.innerHTML = '<li>No results found</li>';
+            }
+          }
+        });
+      </script>
 </body>
 </html>

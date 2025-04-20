@@ -5,6 +5,24 @@
     margin: 0;
 }
 
+@media (max-width: 768px) {
+    body {
+      font-size: 16px;
+    }
+  
+    .main-nav {
+      display: inline-block;
+      margin: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
 body{
     background-color: white;
     color: black;
@@ -19,6 +37,7 @@ a{
 }
 
 img{
+    aspect-ratio: 1/1;
     max-width: 100%;
 }
 
@@ -80,9 +99,12 @@ footer{
     float: center;
 }
 
-.logo img{
-    width: 500px;
-}
+@media (max-width: 768px) {
+    .logo {
+      max-width: 70%;
+      margin: auto;
+    }
+  }
 
 .search-container{
     float: right;
@@ -113,6 +135,20 @@ footer{
     border: 2px solid black;
     border-radius: 4px;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .search-container {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 15px;
+    }
+  
+    .search-box {
+      width: 100%;
+      margin: auto;
+      margin-bottom: 10px;
+    }
 }
 
 .footer-menu{
@@ -153,6 +189,13 @@ footer{
   .social-media li a {
     float: right;
     padding: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .social-media li a {
+        max-width: 15%;
+        margin: auto;
+    }
   }
 
   /*Home Page & Inventory Content*/
@@ -205,4 +248,25 @@ input[type=submit]:hover {
     border-radius: 5px;
     background-color: whitesmoke;
     padding: 20px;
+  }
+
+  .is-invalid {
+    border: 2px solid red !important;
+  }
+  
+  .is-valid {
+    border: 2px solid green !important;
+  }
+
+.error-message {
+    color: #FF0000; 
+    font-size: 12px;
+    margin-top: 5px;
+    bottom: -20px;
+}
+
+.just-validate-error-label {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
   }

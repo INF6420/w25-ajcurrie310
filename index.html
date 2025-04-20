@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The home page and display of featured books for Bookworm Boutique, a secondhand bookstore.">
     <title>Alexis Currie - Bookstore Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,20 +15,20 @@
            <li><a href="about_us.html">About Us</a></li>
            </ul> 
            <div class="logo">
-            <img src="images/bookstore_logo.PNG" alt ="Bookworm Boutique Logo">
+            <img src="images/bookstore_logo.avif" alt ="Bookworm Boutique Logo" width="400" height="400">
         </div>  
         <div class="search-container">
-            <input class="search-box" type="search" placeholder="Search">
-           <button type="submit">Submit</button>
+            <input id="searchInput" class="search-box" type="search" placeholder="Search for a page">
+            <ul id="resultsList"></ul>
         </div>        
         </nav>
     </header>
     <main>
         <h1>Featured Books</h1>
         <div class="row">
-            <div class="column"><img height="500" width= "500" src="images/book_1.jpg" alt="Lord of the Flies"></div>
-            <div class="column"><img height="500" width= "500" src="images/book_2.jpg" alt="Moby Dick"></div>
-            <div class="column"><img height="500" width= "500" src="images/book_3.jpg" alt="The Happy Prince"></div>
+            <div class="column"><img height="500" width= "500" src="images/book_1.avif" alt="Lord of the Flies" loading="lazy"></div>
+            <div class="column"><img height="500" width= "500" src="images/book_2.avif" alt="Moby Dick" loading="lazy"></div>
+            <div class="column"><img height="500" width= "500" src="images/book_3.avif" alt="The Happy Prince" loading="lazy"></div>
         </div>
         <div class="row">
             <div class="column"><h2>Lord of the Flies</h2></div>
@@ -60,5 +61,38 @@
             </ul>
         </div>
     </footer>
+    <script defer>
+        const pages = [
+          { title: 'Home', url: 'index.html' },
+          { title: 'Inventory', url: 'inventory.html' },
+          { title: 'About Us', url: 'about_us.html' },
+          // Add more pages as needed
+        ];
+      
+        const input = document.getElementById('searchInput');
+        const results = document.getElementById('resultsList');
+      
+        input.addEventListener('input', function () {
+          const query = this.value.toLowerCase();
+          results.innerHTML = '';
+      
+          if (query.length > 0) {
+            const matches = pages.filter(page => page.title.toLowerCase().includes(query));
+      
+            matches.forEach(page => {
+              const li = document.createElement('li');
+              const a = document.createElement('a');
+              a.href = page.url;
+              a.textContent = page.title;
+              li.appendChild(a);
+              results.appendChild(li);
+            });
+      
+            if (matches.length === 0) {
+              results.innerHTML = '<li>No results found</li>';
+            }
+          }
+        });
+      </script>
 </body>
 </html>
